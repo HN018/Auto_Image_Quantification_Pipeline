@@ -33,7 +33,6 @@ This guide gets you from "never used it" to measured cells. Allow about 30 minut
 | `segmentation/tools/scan_speed.py` | Python | Finds the fastest accurate settings for a new camera/image size | Only for new image formats |
 | `segmentation/tools/diagnose_speed.py` | Python | Checks why segmentation is slow on a computer | Only if a computer is very slow |
 | `training/*.ipynb` | Google Colab / Kaggle | Training and testing new versions of the model | Only for model development |
-| `docs/teaching/` | - | Line-by-line explanations of every code file | If you want to understand or change the code |
 
 **You only need Python for step 1.** Steps 2-4 are plain FIJI macros. If someone else segments
 your images, you can skip the Python installation.
@@ -132,7 +131,6 @@ MyExperiment\
 | Undo all edits on this image | hold **Space** + click OK |
 | Stop (resume later) | **Esc** |
 
-- Do **not** press the keyboard Delete key on the image (it erases pixels on screen).
 - The model's original outlines are kept in `images_ROIs\original_model_ROIs\`.
 
 ### Step 3 - Masks (optional)
@@ -177,11 +175,7 @@ next to the tables records every choice - keep it with your data.
 | Segmentation takes minutes per image | first lines of the console must say `torch.float32`; see INSTALL_segmentation.md, T6 |
 | Image "SKIPPED - no pixel size" | set the pixel size in Image > Properties and save |
 | "already exists, skipped" | ROI files are protected; only use Overwrite on unreviewed folders |
-| Review: FIJI freezes after some images | raise FIJI's memory (section 2a); send `review_trace.txt` |
 | Review: "requires ImageJ 1.54f" | Help > Update... |
 | Quantify: image skipped "no matching mask" | mask must be named `<image>.tif` or `C<n>-<image>.tif` |
 | Python errors during installation | INSTALL_segmentation.md, troubleshooting T1-T4 |
 
-**Asking for help:** open an *Issue* in this repository (or message the maintainer) and attach the
-relevant log: `segmentation_log.csv` (step 1), `review_trace.txt` (step 2), the `settings_*.txt` file
-(step 4), plus a screenshot of any error message with its line number.
